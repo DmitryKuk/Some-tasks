@@ -1,0 +1,5 @@
+# https://github.com/DmitryKuk/Some-tasks/blob/master/2/main.py
+
+def f(N, M):
+	s = N % M
+	return (s // 2, s - s // 2)

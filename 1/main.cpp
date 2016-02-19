@@ -4,15 +4,9 @@
 #include <functional>
 
 
-int main(int argc, char **argv)
+
+void factor_all(const unsigned int N)
 {
-	if (argc != 2) {
-		std::cout << "Usage: " << argv[0] << " N" << std::endl;
-		return 1;
-	}
-	
-	
-	const unsigned int N = std::stoi(argv[1]);
 	std::vector<std::pair<unsigned int, unsigned int>> numbers{N + 1};	// Pairs of numbers factors
 	std::vector<unsigned int> primes;
 	
@@ -68,6 +62,26 @@ int main(int argc, char **argv)
 		print_factors(i);
 		std::cout << std::endl;
 	}
+}
+
+
+
+int main(int argc, char **argv)
+{
+	if (argc != 2) {
+		std::cout << "Usage: " << argv[0] << " N" << std::endl;
+		return 1;
+	}
+	
+	
+	const unsigned int N = std::stoi(argv[1]);
+	if (N == 0) {
+		std::cout << "Expected N > 0." << std::endl;
+		return 1;
+	}
+	
+	
+	factor_all(N);
 	
 	
 	return 0;
